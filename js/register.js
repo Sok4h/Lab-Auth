@@ -1,13 +1,31 @@
 const database=firebase.database();
 const auth = firebase.auth();
-
 const inputName = document.getElementById("inputName")
 const inputPhone = document.getElementById("inputPhone")
 const inputEmail = document.getElementById("inputEmail")
 const inputPassword = document.getElementById("inputPassword")
 const inputPassword2 = document.getElementById("inputPassword2")
 const btnRegister= document.getElementById("btnRegister")
+const btnLogin=document.getElementById("btnLogin")
 
+
+
+/*auth.onAuthStateChanged(
+
+
+    (user) => {
+
+        //hay un usuario logeado
+        if (user != null) {
+
+            window.location.href="home.html"
+           
+        }
+
+        
+    }
+)
+*/
   Register =()=>{
 
     //no hay campos vacios
@@ -33,8 +51,9 @@ const btnRegister= document.getElementById("btnRegister")
                 
                 database.ref("Users/"+user.id).set(user).then(
                     ()=>{
-                     
+
                         window.location.href="home.html"
+
 
                     }
                 )
@@ -61,5 +80,10 @@ const btnRegister= document.getElementById("btnRegister")
 
 
 btnRegister.addEventListener("click",Register);
+btnLogin.addEventListener("click",()=>{
+
+    window.location.href="login.html"
+
+})
 
 

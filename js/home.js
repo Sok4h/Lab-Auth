@@ -5,6 +5,7 @@ const btnNewContact = document.getElementById("btnNewContact")
 const inputContactName = document.getElementById("inputName")
 const inputContactPhone = document.getElementById("inputPhone")
 const containerContacts = document.getElementById("containerContacts")
+const btnLogOut=document.getElementById("btnLogOut")
 
 let activeUser;
 
@@ -16,7 +17,7 @@ auth.onAuthStateChanged(
         //hay un usuario logeado
         if (user != null) {
 
-            database.ref("Users/" + user.uid).once("value", (data) => {
+            database.ref("Users/" + user.uid).once("value",(data) => {
 
                 let userdb = data.val();
                 activeUser = userdb;
@@ -84,4 +85,14 @@ AddContact = () => {
     }
 
 }
+btnLogOut.addEventListener("click",()=>{
+
+    auth.signOut().then(()=>{
+
+        window.location.href="login.html"
+
+    })
+
+})
+
 btnNewContact.addEventListener("click", AddContact)
