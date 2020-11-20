@@ -9,23 +9,6 @@ const btnRegister= document.getElementById("btnRegister")
 const btnLogin=document.getElementById("btnLogin")
 
 
-
-/*auth.onAuthStateChanged(
-
-
-    (user) => {
-
-        //hay un usuario logeado
-        if (user != null) {
-
-            window.location.href="home.html"
-           
-        }
-
-        
-    }
-)
-*/
   Register =()=>{
 
     //no hay campos vacios

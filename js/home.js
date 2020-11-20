@@ -15,7 +15,7 @@ auth.onAuthStateChanged(
     (user) => {
 
         //hay un usuario logeado
-        if (user != null) {
+        if (user != null) {   
 
             database.ref("Users/" + user.uid).once("value",(data) => {
 
