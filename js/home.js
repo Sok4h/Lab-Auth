@@ -39,7 +39,7 @@ auth.onAuthStateChanged(
 
 LoadContacts = () => {
 
-    database.ref("Contacts").orderByChild("userId").equalTo(activeUser.id).on("value",(data)=>{
+    database.ref("Contacts").orderByChild("idUser").equalTo(activeUser.id).on("value",(data)=>{
 
         containerContacts.innerHTML=""
 
@@ -75,7 +75,7 @@ AddContact = () => {
             id: reference.key,
             userId: activeUser.id,
             name: inputContactName.value,
-            phone: inputContactPhone.value
+            phoneNumber: inputContactPhone.value
         }
 
         inputContactName.val=""

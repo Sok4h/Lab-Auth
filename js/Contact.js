@@ -12,7 +12,7 @@ class Contact{
         let name = document.createElement("p")
         name.innerHTML=this.contact.name
         let phone = document.createElement("p")
-        phone.innerHTML=this.contact.phone
+        phone.innerHTML=this.contact.phoneNumber
         let btnDelete=document.createElement("button")
         btnDelete.innerHTML="Delete"
         container.appendChild(name);
